@@ -81,21 +81,17 @@ border-radius:50%;
 background:rgba(255,255,255,.06);
 }
 
-bottom:-120px;
-
-right:-100px;
-
-filter:blur(10px);
-
-}
-
 .hero-content{
 
 position:relative;
 
-z-index:2;
+z-index:10;
 
 max-width:900px;
+
+margin:0 auto;
+
+text-align:center;
 
 }
 
