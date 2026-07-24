@@ -665,3 +665,24 @@ color:white;
 transform:scale(1.1);
 
 }
+/*==========================
+Hero Wave
+===========================*/
+
+.hero-wave{
+
+margin-top:-5px;
+
+line-height:0;
+
+}
+
+.hero-wave svg{
+
+display:block;
+
+width:100%;
+
+height:90px;
+
+}
