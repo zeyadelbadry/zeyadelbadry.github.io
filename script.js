@@ -90,3 +90,36 @@ const timer = setInterval(() => {
     }
 
 });
+// اختيار الصف حسب المرحلة
+const stageSelect = document.getElementById("stage");
+const gradeSelect = document.getElementById("grade");
+
+const grades = {
+    "ابتدائي": [
+        "الثالث الابتدائي",
+        "الرابع الابتدائي",
+        "الخامس الابتدائي",
+        "السادس الابتدائي"
+    ],
+    "إعدادي": [
+        "الأول الإعدادي",
+        "الثاني الإعدادي",
+        "الثالث الإعدادي"
+    ]
+};
+
+stageSelect.addEventListener("change", function () {
+
+    gradeSelect.innerHTML = '<option value="">اختر الصف</option>';
+
+    grades[this.value].forEach(function (grade) {
+
+        const option = document.createElement("option");
+        option.value = grade;
+        option.textContent = grade;
+
+        gradeSelect.appendChild(option);
+
+    });
+
+});
