@@ -126,3 +126,26 @@ form.addEventListener("submit", async function (e) {
     }
 
 });
+/* الشريط المتحرك */
+
+const marquee = document.querySelector(".marquee");
+
+let position = window.innerWidth;
+
+function moveBanner(){
+
+    position -= 2; // السرعة
+
+    marquee.style.right = position + "px";
+
+    if(position < -marquee.offsetWidth){
+
+        position = window.innerWidth;
+
+    }
+
+    requestAnimationFrame(moveBanner);
+
+}
+
+moveBanner();
