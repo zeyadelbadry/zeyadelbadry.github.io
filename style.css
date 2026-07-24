@@ -68,3 +68,32 @@ opacity:1;
 }
 
 }
+#countdown{
+
+font-size:70px;
+
+color:#0b3d91;
+
+margin-top:15px;
+
+font-weight:bold;
+
+animation:pulse .8s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
