@@ -156,3 +156,19 @@ header h1{
 }
 
 }
+textarea{
+    width:100%;
+    padding:18px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:17px;
+    resize:vertical;
+    min-height:120px;
+    transition:.3s;
+}
+
+textarea:focus{
+    outline:none;
+    border-color:#0b3d91;
+    box-shadow:0 0 10px rgba(11,61,145,.2);
+}
