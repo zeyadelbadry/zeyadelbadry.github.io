@@ -4,7 +4,7 @@ const form = document.getElementById("bookingForm");
 const popup = document.getElementById("successPopup");
 const submitBtn = form.querySelector("button");
 
-// تغيير الصفوف حسب المرحلة
+// اختيار الصف حسب المرحلة
 const stageSelect = document.getElementById("stage");
 const gradeSelect = document.getElementById("grade");
 
@@ -39,7 +39,6 @@ stageSelect.addEventListener("change", function () {
     });
 
 });
-
 // إرسال النموذج
 form.addEventListener("submit", async function (e) {
 
