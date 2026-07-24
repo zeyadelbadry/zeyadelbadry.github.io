@@ -97,35 +97,23 @@ transform:scale(1);
 }
 
 }
+/* الشريط الإخباري */
+
 .top-banner{
     width:100%;
-    overflow:hidden;
+    height:45px;
     background:linear-gradient(90deg,#ff9800,#ff5722);
-    color:#fff;
-    padding:12px 0;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.banner-track{
+    overflow:hidden;
+    position:relative;
     display:flex;
-    width:max-content;
-    animation:scroll 15s linear infinite;
+    align-items:center;
 }
 
-.banner-track span{
+.marquee{
+    position:absolute;
     white-space:nowrap;
-    padding:0 80px;
-}
-
-@keyframes scroll{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
-
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+    right:-100%;
 }
