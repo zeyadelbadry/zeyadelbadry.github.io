@@ -4,6 +4,43 @@ const form = document.getElementById("bookingForm");
 const popup = document.getElementById("successPopup");
 const submitBtn = form.querySelector("button");
 
+// تغيير الصفوف حسب المرحلة
+const stageSelect = document.getElementById("stage");
+const gradeSelect = document.getElementById("grade");
+
+const grades = {
+    "ابتدائي": [
+        "الثالث الابتدائي",
+        "الرابع الابتدائي",
+        "الخامس الابتدائي",
+        "السادس الابتدائي"
+    ],
+    "إعدادي": [
+        "الأول الإعدادي",
+        "الثاني الإعدادي",
+        "الثالث الإعدادي"
+    ]
+};
+
+stageSelect.addEventListener("change", function () {
+
+    gradeSelect.innerHTML = '<option value="">اختر الصف</option>';
+
+    if (!this.value) return;
+
+    grades[this.value].forEach(function (grade) {
+
+        const option = document.createElement("option");
+        option.value = grade;
+        option.textContent = grade;
+
+        gradeSelect.appendChild(option);
+
+    });
+
+});
+
+// إرسال النموذج
 form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
@@ -45,38 +82,38 @@ form.addEventListener("submit", async function (e) {
 
 لقد أتممت الحجز من خلال الموقع.`;
 
-    let counter = 3;
+        let counter = 3;
+        const countdown = document.getElementById("countdown");
+        countdown.innerHTML = counter;
 
-const countdown = document.getElementById("countdown");
+        const timer = setInterval(() => {
 
-countdown.innerHTML = counter;
+            counter--;
+            countdown.innerHTML = counter;
 
-const timer = setInterval(() => {
+            if (counter <= 0) {
 
-    counter--;
+                clearInterval(timer);
 
-    countdown.innerHTML = counter;
+                popup.style.display = "none";
 
-    if(counter <= 0){
+                window.open(
+                    `https://wa.me/201148131965?text=${encodeURIComponent(message)}`,
+                    "_blank"
+                );
 
-        clearInterval(timer);
+                form.reset();
 
-        popup.style.display = "none";
+                gradeSelect.innerHTML = '<option value="">اختر الصف</option>';
 
-        window.open(
-            `https://wa.me/201148131965?text=${encodeURIComponent(message)}`,
-            "_blank"
-        );
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = "🚀 تأكيد الحجز";
+                submitBtn.style.background = "#0b3d91";
 
-        form.reset();
+            }
 
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "🚀 تأكيد الحجز";
-        submitBtn.style.background = "#0b3d91";
+        }, 1000);
 
-    }
-
-},1000);
     } catch (error) {
 
         alert("حدث خطأ أثناء إرسال الحجز، حاول مرة أخرى.");
@@ -88,38 +125,5 @@ const timer = setInterval(() => {
         console.error(error);
 
     }
-
-});
-// اختيار الصف حسب المرحلة
-const stageSelect = document.getElementById("stage");
-const gradeSelect = document.getElementById("grade");
-
-const grades = {
-    "ابتدائي": [
-        "الثالث الابتدائي",
-        "الرابع الابتدائي",
-        "الخامس الابتدائي",
-        "السادس الابتدائي"
-    ],
-    "إعدادي": [
-        "الأول الإعدادي",
-        "الثاني الإعدادي",
-        "الثالث الإعدادي"
-    ]
-};
-
-stageSelect.addEventListener("change", function () {
-
-    gradeSelect.innerHTML = '<option value="">اختر الصف</option>';
-
-    grades[this.value].forEach(function (grade) {
-
-        const option = document.createElement("option");
-        option.value = grade;
-        option.textContent = grade;
-
-        gradeSelect.appendChild(option);
-
-    });
 
 });
