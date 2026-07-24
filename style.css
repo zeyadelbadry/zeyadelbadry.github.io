@@ -1,6 +1,8 @@
-/* ===========================
-   RESET
-=========================== */
+/*======================================
+    Mr/ Zeyad El-badry Website
+=======================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -14,35 +16,63 @@ html{
 }
 
 body{
-    background:#f5f7fb;
+    background:#f4f7fc;
     color:#222;
+    direction:rtl;
     overflow-x:hidden;
 }
 
-/* ===========================
-   HERO SECTION
-=========================== */
+/*=========================
+Top Banner
+=========================*/
+
+.top-banner{
+    width:100%;
+    height:45px;
+    background:linear-gradient(90deg,#ff9800,#ff5722);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    position:relative;
+    z-index:999;
+}
+
+.marquee{
+    position:absolute;
+    white-space:nowrap;
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+}
+
+/*=========================
+Hero
+=========================*/
 
 .hero{
 
     position:relative;
+
     overflow:hidden;
 
     min-height:100vh;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
-    padding:100px 20px 70px;
+    text-align:center;
+
+    padding:90px 20px;
 
     background:
-    radial-gradient(circle at top left,#4ea8ff33 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#ffffff18 0%,transparent 35%),
-    linear-gradient(135deg,#0b3d91 0%,#245fb5 50%,#2d7ae0 100%);
-}
+    radial-gradient(circle at top left,rgba(255,255,255,.18),transparent 28%),
+    radial-gradient(circle at bottom right,rgba(255,255,255,.10),transparent 30%),
+    linear-gradient(135deg,#0b3d91,#1565c0,#42a5f5);
 
-/* دوائر شفافة بالخلفية */
+}
 
 .hero::before{
 
@@ -50,15 +80,17 @@ content:"";
 
 position:absolute;
 
-width:500px;
-height:500px;
+width:450px;
+
+height:450px;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.06);
+background:rgba(255,255,255,.08);
 
 top:-180px;
-left:-160px;
+
+left:-120px;
 
 filter:blur(15px);
 
@@ -70,19 +102,21 @@ content:"";
 
 position:absolute;
 
-width:350px;
-height:350px;
+width:320px;
+
+height:320px;
 
 border-radius:50%;
 
 background:rgba(255,255,255,.05);
 
 bottom:-120px;
-right:-120px;
+
+right:-100px;
+
+filter:blur(10px);
 
 }
-
-/* المحتوى */
 
 .hero-content{
 
@@ -92,31 +126,23 @@ z-index:2;
 
 max-width:900px;
 
-text-align:center;
-
 }
-
-/* ===========================
-   PROFILE IMAGE
-=========================== */
 
 .profile-img{
 
-width:230px;
+width:220px;
 
-height:230px;
-
-object-fit:cover;
+height:220px;
 
 border-radius:50%;
 
-border:8px solid rgba(255,255,255,.95);
+object-fit:cover;
+
+border:7px solid rgba(255,255,255,.95);
 
 box-shadow:
-
 0 20px 60px rgba(0,0,0,.35),
-
-0 0 40px rgba(255,255,255,.20);
+0 0 35px rgba(255,255,255,.20);
 
 transition:.4s;
 
@@ -124,222 +150,206 @@ transition:.4s;
 
 .profile-img:hover{
 
-transform:scale(1.05) rotate(1deg);
+transform:scale(1.05);
 
 }
 
-/* ===========================
-   TEXT
-=========================== */
-
 .hero h1{
 
-margin-top:30px;
+margin-top:25px;
 
-font-size:56px;
+font-size:54px;
 
 font-weight:800;
 
 color:#fff;
 
-text-shadow:0 5px 18px rgba(0,0,0,.30);
-
 }
 
 .subtitle{
 
-margin-top:18px;
+margin-top:15px;
 
-font-size:28px;
+font-size:25px;
 
 font-weight:700;
 
-color:#ffffff;
-
-line-height:1.7;
+color:#eef4ff;
 
 }
 
 .hero p{
 
-margin-top:18px;
+margin-top:15px;
 
-font-size:23px;
+font-size:22px;
 
-color:#eef4ff;
+color:#fff;
 
-line-height:2;
+line-height:1.9;
 
 }
 
-/* ===========================
-   BUTTON
-=========================== */
-
 .btn{
 
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
+display:inline-block;
 
 margin-top:35px;
 
-padding:18px 42px;
+padding:17px 42px;
 
 background:#fff;
 
 color:#0b3d91;
 
-font-size:22px;
+text-decoration:none;
+
+font-size:20px;
 
 font-weight:800;
 
-text-decoration:none;
-
-border-radius:60px;
-
-box-shadow:0 12px 35px rgba(0,0,0,.25);
+border-radius:50px;
 
 transition:.35s;
+
+box-shadow:0 12px 35px rgba(0,0,0,.25);
 
 }
 
 .btn:hover{
 
-transform:translateY(-6px);
+transform:translateY(-5px);
 
 background:#ffd54f;
 
 color:#0b3d91;
 
-box-shadow:0 20px 40px rgba(0,0,0,.30);
-
 }
-/* ===========================
-   FEATURES
-=========================== */
+/*======================================
+        FEATURES
+=======================================*/
 
 .features{
 
-max-width:1200px;
+    max-width:1200px;
 
-margin:-70px auto 70px;
+    margin:-70px auto 70px;
 
-padding:0 25px;
+    padding:0 20px;
 
-display:grid;
+    display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 
-gap:25px;
+    gap:25px;
 
-position:relative;
+    position:relative;
 
-z-index:5;
+    z-index:5;
 
 }
 
 .card{
 
-background:#fff;
+    background:rgba(255,255,255,.96);
 
-padding:35px 25px;
+    border-radius:22px;
 
-border-radius:22px;
+    padding:30px 20px;
 
-text-align:center;
+    text-align:center;
 
-font-size:24px;
+    font-size:22px;
 
-font-weight:700;
+    font-weight:700;
 
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
 
-transition:.35s;
+    transition:.35s;
 
-cursor:pointer;
-
-border:1px solid rgba(0,0,0,.05);
+    cursor:pointer;
 
 }
 
 .card:hover{
 
-transform:translateY(-10px);
+    transform:translateY(-10px);
 
-box-shadow:0 20px 45px rgba(0,0,0,.15);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
 
-background:linear-gradient(135deg,#ffffff,#f3f8ff);
+    background:#0b3d91;
+
+    color:#fff;
 
 }
 
-/* ===========================
-   BOOKING
-=========================== */
+/*======================================
+        BOOKING
+=======================================*/
 
 .booking-container{
 
-max-width:850px;
+    width:90%;
 
-margin:40px auto 70px;
+    max-width:850px;
 
-background:#fff;
+    margin:60px auto;
 
-padding:45px;
+    background:#fff;
 
-border-radius:30px;
+    border-radius:30px;
 
-box-shadow:0 20px 50px rgba(0,0,0,.10);
+    padding:45px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
 
 }
 
 .booking-container h2{
 
-text-align:center;
+    text-align:center;
 
-font-size:42px;
+    font-size:38px;
 
-color:#0b3d91;
+    color:#0b3d91;
 
-margin-bottom:35px;
+    margin-bottom:35px;
 
 }
 
 form{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:22px;
+    gap:20px;
 
 }
 
-/* ===========================
-   INPUTS
-=========================== */
+/*======================================
+        INPUTS
+=======================================*/
 
 input,
 select,
 textarea{
 
-width:100%;
+    width:100%;
 
-padding:18px 22px;
+    padding:18px 20px;
 
-font-size:18px;
+    font-size:17px;
 
-border-radius:16px;
+    border-radius:15px;
 
-border:2px solid #e6e6e6;
+    border:2px solid #e6e6e6;
 
-outline:none;
+    background:#fafafa;
 
-transition:.3s;
+    transition:.3s;
 
-background:#fafafa;
+    outline:none;
 
 }
 
@@ -347,159 +357,157 @@ input:focus,
 select:focus,
 textarea:focus{
 
-border-color:#0b3d91;
+    border-color:#0b3d91;
 
-background:#fff;
+    background:#fff;
 
-box-shadow:0 0 18px rgba(11,61,145,.12);
+    box-shadow:0 0 15px rgba(11,61,145,.12);
 
 }
 
 textarea{
 
-min-height:140px;
+    min-height:130px;
 
-resize:vertical;
+    resize:vertical;
 
 }
 
-/* ===========================
-   BUTTON
-=========================== */
+/*======================================
+        BUTTON
+=======================================*/
 
 button{
 
-border:none;
+    border:none;
 
-background:linear-gradient(135deg,#0b3d91,#1d62d1);
+    background:linear-gradient(135deg,#0b3d91,#1565c0);
 
-color:#fff;
+    color:#fff;
 
-padding:18px;
+    font-size:21px;
 
-font-size:22px;
+    font-weight:700;
 
-font-weight:700;
+    padding:18px;
 
-border-radius:18px;
+    border-radius:15px;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.35s;
+    transition:.35s;
 
 }
 
 button:hover{
 
-transform:translateY(-4px);
+    transform:translateY(-4px);
 
-box-shadow:0 15px 35px rgba(11,61,145,.35);
+    box-shadow:0 15px 35px rgba(11,61,145,.35);
 
 }
 
-/* ===========================
-   FOOTER
-=========================== */
+/*======================================
+        FOOTER
+=======================================*/
 
 footer{
 
-margin-top:60px;
+    background:#0b3d91;
 
-padding:28px;
+    color:#fff;
 
-text-align:center;
+    text-align:center;
 
-background:#0b3d91;
+    padding:25px;
 
-color:#fff;
+    font-size:18px;
 
-font-size:20px;
-
-font-weight:600;
+    margin-top:60px;
 
 }
-/* ===========================
-   SUCCESS POPUP
-=========================== */
+/*======================================
+        SUCCESS POPUP
+=======================================*/
 
 .popup{
 
-position:fixed;
+    position:fixed;
 
-top:0;
-left:0;
+    top:0;
+    left:0;
 
-width:100%;
-height:100%;
+    width:100%;
+    height:100%;
 
-background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
-display:none;
+    display:none;
 
-justify-content:center;
-align-items:center;
+    justify-content:center;
+    align-items:center;
 
-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
 
-z-index:99999;
+    z-index:9999;
 
 }
 
 .popup-content{
 
-width:340px;
+    width:340px;
 
-background:#fff;
+    background:#fff;
 
-padding:35px;
+    padding:35px;
 
-border-radius:25px;
+    border-radius:25px;
 
-text-align:center;
+    text-align:center;
 
-box-shadow:0 20px 60px rgba(0,0,0,.30);
+    box-shadow:0 20px 60px rgba(0,0,0,.30);
 
-animation:popup .45s ease;
+    animation:popup .45s ease;
 
 }
 
 .checkmark{
 
-width:95px;
-height:95px;
+    width:95px;
+    height:95px;
 
-margin:auto;
+    background:#28a745;
 
-border-radius:50%;
+    color:#fff;
 
-display:flex;
+    border-radius:50%;
 
-justify-content:center;
-align-items:center;
+    display:flex;
 
-font-size:55px;
+    justify-content:center;
+    align-items:center;
 
-color:#fff;
+    margin:auto;
 
-background:#28a745;
+    font-size:55px;
 
-box-shadow:0 10px 30px rgba(40,167,69,.35);
+    margin-bottom:20px;
 
-margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(40,167,69,.30);
 
 }
 
 #countdown{
 
-font-size:65px;
+    font-size:65px;
 
-margin-top:15px;
+    color:#0b3d91;
 
-font-weight:bold;
+    margin-top:15px;
 
-color:#0b3d91;
+    font-weight:bold;
 
-animation:pulse .8s infinite;
+    animation:pulse .8s infinite;
 
 }
 
@@ -533,63 +541,9 @@ opacity:1;
 
 }
 
-/* ===========================
-   TOP NEWS BAR
-=========================== */
-
-.top-banner{
-
-height:48px;
-
-background:linear-gradient(90deg,#ff9800,#ff5722);
-
-overflow:hidden;
-
-display:flex;
-
-align-items:center;
-
-white-space:nowrap;
-
-position:relative;
-
-}
-
-.marquee{
-
-display:inline-block;
-
-padding-left:100%;
-
-font-size:20px;
-
-font-weight:800;
-
-color:#fff;
-
-animation:marquee 15s linear infinite;
-
-}
-
-@keyframes marquee{
-
-0%{
-
-transform:translateX(0);
-
-}
-
-100%{
-
-transform:translateX(-200%);
-
-}
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
+/*======================================
+        RESPONSIVE
+=======================================*/
 
 @media(max-width:768px){
 
@@ -601,37 +555,29 @@ min-height:auto;
 
 }
 
-.profile-img{
-
-width:180px;
-
-height:180px;
-
-}
-
 .hero h1{
 
-font-size:42px;
+font-size:38px;
 
 }
 
 .subtitle{
 
-font-size:21px;
+font-size:20px;
 
 }
 
 .hero p{
 
-font-size:19px;
+font-size:18px;
 
 }
 
-.btn{
+.profile-img{
 
-font-size:20px;
+width:170px;
 
-padding:16px 35px;
+height:170px;
 
 }
 
@@ -651,7 +597,7 @@ padding:25px;
 
 .booking-container{
 
-margin:30px 15px;
+width:95%;
 
 padding:25px;
 
@@ -659,7 +605,7 @@ padding:25px;
 
 .booking-container h2{
 
-font-size:34px;
+font-size:30px;
 
 }
 
@@ -667,13 +613,13 @@ input,
 select,
 textarea{
 
-font-size:17px;
+font-size:16px;
 
 }
 
 button{
 
-font-size:20px;
+font-size:18px;
 
 }
 
@@ -683,8 +629,34 @@ width:90%;
 
 }
 
-.marquee{
+}
 
-font-size:18px;
+/*======================================
+        SCROLLBAR
+=======================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#eef2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#0b3d91;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#1565c0;
 
 }
