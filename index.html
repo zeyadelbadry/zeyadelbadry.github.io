@@ -64,7 +64,11 @@ required>
 type="tel"
 name="phone"
 placeholder="رقم ولي الأمر (واتساب)"
-required>
+required
+pattern="01[0125][0-9]{8}"
+maxlength="11"
+inputmode="numeric"
+title="من فضلك أدخل رقم واتساب مصري صحيح مكون من 11 رقم">
 
 <select
 name="stage"
