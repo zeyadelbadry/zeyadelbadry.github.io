@@ -4,68 +4,156 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mr. Zeyad El-Badry | حجز الكورسات</title>
+
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
 <section class="hero">
-  <div class="hero-content">
-    <img src="profile.jpeg" class="profile-img" alt="Mr. Zeyad">
-    <h1>Mr. Zeyad El-Badry</h1>
-    <p class="subtitle">مدرس اللغة الإنجليزية للمرحلتين الابتدائية والإعدادية</p>
-    <p>شرح مبسط • متابعة مستمرة • اختبارات دورية</p>
-    <a href="#booking" class="btn">احجز مكانك الآن</a>
-  </div>
+
+<div class="hero-content">
+
+<img src="profile.jpeg" class="profile-img" alt="Mr. Zeyad">
+
+<h1>Mr. Zeyad El-Badry</h1>
+
+<p class="subtitle">
+مدرس اللغة الإنجليزية للمرحلتين الابتدائية والإعدادية
+</p>
+
+<p>
+شرح مبسط • متابعة مستمرة • اختبارات دورية
+</p>
+
+<a href="#booking" class="btn">
+احجز مكانك الآن
+</a>
+
+</div>
+
 </section>
 
 <section class="features">
-  <div class="card">📘 شرح مبسط</div>
-  <div class="card">👨‍👩‍👧 متابعة مع ولي الأمر</div>
-  <div class="card">📝 امتحانات دورية</div>
-  <div class="card">🎯 مراجعات نهائية</div>
+
+<div class="card">📘 شرح مبسط</div>
+
+<div class="card">👨‍👩‍👧 متابعة مع ولي الأمر</div>
+
+<div class="card">📝 امتحانات دورية</div>
+
+<div class="card">🎯 مراجعات نهائية</div>
+
 </section>
 
 <section id="booking" class="booking-container">
+
 <h2>نموذج الحجز</h2>
 
-<form>
-<input type="text" placeholder="اسم الطالب" required>
-<input type="text" placeholder="رقم ولي الأمر" required>
+<form id="bookingForm">
 
-<select required>
-<option>اختر المرحلة</option>
+<input
+type="text"
+name="name"
+placeholder="اسم الطالب"
+required>
+
+<input
+type="tel"
+name="phone"
+placeholder="رقم ولي الأمر"
+required>
+
+<select
+name="stage"
+required>
+
+<option value="">اختر المرحلة</option>
+
 <option>ابتدائي</option>
+
 <option>إعدادي</option>
+
 </select>
 
-<select required>
-<option>اختر الصف</option>
+<select
+name="grade"
+required>
+
+<option value="">اختر الصف</option>
+
 <option>الثالث الابتدائي</option>
+
 <option>الرابع الابتدائي</option>
+
 <option>الخامس الابتدائي</option>
+
 <option>السادس الابتدائي</option>
+
 <option>الأول الإعدادي</option>
+
 <option>الثاني الإعدادي</option>
+
 <option>الثالث الإعدادي</option>
+
 </select>
 
-<input type="text" placeholder="العنوان">
-<textarea placeholder="ملاحظات (اختياري)"></textarea>
+<input
+type="text"
+name="address"
+placeholder="العنوان">
 
-<button type="submit">إرسال الحجز</button>
+<textarea
+name="notes"
+placeholder="ملاحظات (اختياري)"></textarea>
+
+<button type="submit">
+
+إرسال الحجز
+
+</button>
+
 </form>
+
 </section>
 
 <footer>
-<p>© 2026 Mr. Zeyad El-Badry</p>
+
+<p>
+
+© 2026 Mr. Zeyad El-Badry
+
+</p>
+
 </footer>
+
+<!-- Success Popup -->
+
 <div id="successPopup" class="popup">
-    <div class="popup-content">
-        <div class="checkmark">✓</div>
-        <h2>تم الحجز بنجاح</h2>
-        <p>سيتم تحويلك إلى واتساب...</p>
-    </div>
+
+<div class="popup-content">
+
+<div class="checkmark">✓</div>
+
+<h2>
+
+تم الحجز بنجاح
+
+</h2>
+
+<p>
+
+جارٍ تحويلك إلى واتساب...
+
+</p>
+
 </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
