@@ -50,28 +50,16 @@ Hero
 =========================*/
 
 .hero{
+position:relative;
+overflow:hidden;
+padding:90px 20px 120px;
+text-align:center;
+color:#fff;
 
-    position:relative;
-
-    overflow:hidden;
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:90px 20px;
-
-    background:
-    radial-gradient(circle at top left,rgba(255,255,255,.18),transparent 28%),
-    radial-gradient(circle at bottom right,rgba(255,255,255,.10),transparent 30%),
-    linear-gradient(135deg,#0b3d91,#1565c0,#42a5f5);
-
+background:
+radial-gradient(circle at 15% 20%, rgba(255,255,255,.12) 0 120px, transparent 121px),
+radial-gradient(circle at 85% 15%, rgba(255,255,255,.08) 0 90px, transparent 91px),
+linear-gradient(135deg,#0f4fb8 0%,#2f80ed 55%,#58a6ff 100%);
 }
 
 .hero::before{
