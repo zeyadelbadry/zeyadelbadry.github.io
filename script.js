@@ -45,23 +45,38 @@ form.addEventListener("submit", async function (e) {
 
 لقد أتممت الحجز من خلال الموقع.`;
 
-        setTimeout(() => {
+    let counter = 3;
 
-            popup.style.display = "none";
+const countdown = document.getElementById("countdown");
 
-            window.open(
-                `https://wa.me/201148131965?text=${encodeURIComponent(message)}`,
-                "_blank"
-            );
+countdown.innerHTML = counter;
 
-            form.reset();
+const timer = setInterval(() => {
 
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = "🚀 تأكيد الحجز";
-            submitBtn.style.background = "#0b3d91";
+    counter--;
 
-        }, 2500);
+    countdown.innerHTML = counter;
 
+    if(counter <= 0){
+
+        clearInterval(timer);
+
+        popup.style.display = "none";
+
+        window.open(
+            `https://wa.me/201148131965?text=${encodeURIComponent(message)}`,
+            "_blank"
+        );
+
+        form.reset();
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "🚀 تأكيد الحجز";
+        submitBtn.style.background = "#0b3d91";
+
+    }
+
+},1000);
     } catch (error) {
 
         alert("حدث خطأ أثناء إرسال الحجز، حاول مرة أخرى.");
