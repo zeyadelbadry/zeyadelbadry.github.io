@@ -1,63 +1,166 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr. Zeyad El-badry | الحجز الإلكتروني</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Zeyad El-Badry | حجز الكورسات</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
 
-<h1>Mr. Zeyad El-badry</h1>
+<nav class="navbar">
 
-<p>مدرس اللغة الإنجليزية للمرحلة الابتدائية والإعدادية</p>
+<h2 class="logo">Mr. Zeyad El-Badry</h2>
+
+<ul>
+
+<li><a href="#home">الرئيسية</a></li>
+
+<li><a href="#about">نبذة عني</a></li>
+
+<li><a href="#booking">الحجز</a></li>
+
+<li><a href="#contact">تواصل</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>احجز مكانك الآن</h1>
+
+<h2>مع مستر زياد البدري</h2>
+
+<p>
+
+مدرس اللغة الإنجليزية للمرحلتين الابتدائية والإعدادية
+
+شرح مبسط – متابعة مستمرة – اختبارات دورية
+
+</p>
 
 <a href="#booking" class="btn">
 احجز الآن
 </a>
 
-</header>
+</div>
 
-<section>
+<div class="hero-image">
 
-<h2>
-مرحبًا بكم
-</h2>
+<img src="profile.jpeg" alt="Mr Zeyad">
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<h2>نبذة عني</h2>
 
 <p>
 
-مرحبًا بكم في الموقع الرسمي للحجز الإلكتروني.
+أهلاً بكم...
+
+أنا مستر زياد البدري، مدرس لغة إنجليزية متخصص في تبسيط المنهج ومساعدة الطلاب على تحقيق أعلى الدرجات من خلال شرح احترافي ومتابعة مستمرة.
 
 </p>
 
 </section>
 
-<section id="booking">
+<section id="booking" class="booking">
 
-<h2>
+<h2>نموذج الحجز</h2>
 
-استمارة الحجز
+<form>
 
-</h2>
+<input type="text" placeholder="اسم الطالب" required>
+
+<input type="text" placeholder="رقم ولي الأمر" required>
+
+<select required>
+
+<option>اختر المرحلة</option>
+
+<option>ابتدائي</option>
+
+<option>إعدادي</option>
+
+</select>
+
+<select required>
+
+<option>اختر الصف</option>
+
+<option>الثالث الابتدائي</option>
+
+<option>الرابع الابتدائي</option>
+
+<option>الخامس الابتدائي</option>
+
+<option>السادس الابتدائي</option>
+
+<option>الأول الإعدادي</option>
+
+<option>الثاني الإعدادي</option>
+
+<option>الثالث الإعدادي</option>
+
+</select>
+
+<input type="text" placeholder="المحافظة">
+
+<input type="text" placeholder="المركز / المدينة">
+
+<button type="submit">
+
+إرسال الحجز
+
+</button>
+
+</form>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>تواصل معنا</h2>
 
 <p>
 
-قريبًا...
+📱 WhatsApp
+
+</p>
+
+<p>
+
+📧 Facebook
 
 </p>
 
 </section>
+
+<footer>
+
+<p>
+
+© 2026 Mr. Zeyad El-Badry
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
