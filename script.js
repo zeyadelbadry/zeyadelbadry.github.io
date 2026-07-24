@@ -1,16 +1,15 @@
-// جاهز لإضافة ربط Google Sheets لاحقًا.
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzR7sm16GEFPprJcbYIno6HPs3g--6jJke3Gv4n54qT3iY5VJ0bk1neHOATHpFonw-H/exec";
 
 const form = document.getElementById("bookingForm");
 const popup = document.getElementById("successPopup");
+const submitBtn = form.querySelector("button");
 
 form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
-    const submitBtn = form.querySelector("button");
     submitBtn.disabled = true;
-    submitBtn.innerText = "جاري إرسال الحجز...";
+    submitBtn.innerHTML = "⏳ جاري إرسال البيانات...";
 
     const data = {
         name: form.name.value,
@@ -32,6 +31,9 @@ form.addEventListener("submit", async function (e) {
             body: JSON.stringify(data)
         });
 
+        submitBtn.innerHTML = "✅ تم الحجز بنجاح";
+        submitBtn.style.background = "#28a745";
+
         popup.style.display = "flex";
 
         const message =
@@ -45,6 +47,8 @@ form.addEventListener("submit", async function (e) {
 
         setTimeout(() => {
 
+            popup.style.display = "none";
+
             window.open(
                 `https://wa.me/201148131965?text=${encodeURIComponent(message)}`,
                 "_blank"
@@ -52,19 +56,19 @@ form.addEventListener("submit", async function (e) {
 
             form.reset();
 
-            popup.style.display = "none";
-
             submitBtn.disabled = false;
-            submitBtn.innerText = "إرسال الحجز";
+            submitBtn.innerHTML = "🚀 تأكيد الحجز";
+            submitBtn.style.background = "#0b3d91";
 
         }, 2500);
 
     } catch (error) {
 
-        alert("حدث خطأ أثناء إرسال الحجز.");
+        alert("حدث خطأ أثناء إرسال الحجز، حاول مرة أخرى.");
 
         submitBtn.disabled = false;
-        submitBtn.innerText = "إرسال الحجز";
+        submitBtn.innerHTML = "🚀 تأكيد الحجز";
+        submitBtn.style.background = "#0b3d91";
 
         console.error(error);
 
