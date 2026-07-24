@@ -4,43 +4,51 @@ const form = document.getElementById("bookingForm");
 const popup = document.getElementById("successPopup");
 const submitBtn = form.querySelector("button");
 
-// اختيار الصف حسب المرحلة
+//=========================
+// الصفوف حسب المرحلة
+//=========================
+
 const stageSelect = document.getElementById("stage");
 const gradeSelect = document.getElementById("grade");
 
 const grades = {
-    "ابتدائي": [
+
+    "ابتدائي":[
         "الثالث الابتدائي",
         "الرابع الابتدائي",
         "الخامس الابتدائي",
         "السادس الابتدائي"
     ],
-    "إعدادي": [
+
+    "إعدادي":[
         "الأول الإعدادي",
         "الثاني الإعدادي",
         "الثالث الإعدادي"
     ]
+
 };
 
-stageSelect.addEventListener("change", function () {
+stageSelect.addEventListener("change",()=>{
 
-    gradeSelect.innerHTML = '<option value="">اختر الصف</option>';
+    gradeSelect.innerHTML='<option value="">اختر الصف</option>';
 
-    if (!this.value) return;
+    if(!stageSelect.value) return;
 
-    grades[this.value].forEach(function (grade) {
+    grades[stageSelect.value].forEach((grade)=>{
 
-        const option = document.createElement("option");
-        option.value = grade;
-        option.textContent = grade;
-
-        gradeSelect.appendChild(option);
+        gradeSelect.innerHTML +=
+        `<option value="${grade}">
+        ${grade}
+        </option>`;
 
     });
 
 });
+//=========================
 // إرسال النموذج
-form.addEventListener("submit", async function (e) {
+//=========================
+
+form.addEventListener("submit", async function(e){
 
     e.preventDefault();
 
@@ -48,29 +56,35 @@ form.addEventListener("submit", async function (e) {
     submitBtn.innerHTML = "⏳ جاري إرسال البيانات...";
 
     const data = {
+
         name: form.name.value,
         phone: form.phone.value,
         stage: form.stage.value,
         grade: form.grade.value,
         address: form.address.value,
         notes: form.notes.value
+
     };
 
-    try {
+    try{
 
-        await fetch(SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-                "Content-Type": "application/json"
+        await fetch(SCRIPT_URL,{
+
+            method:"POST",
+            mode:"no-cors",
+
+            headers:{
+                "Content-Type":"application/json"
             },
-            body: JSON.stringify(data)
+
+            body:JSON.stringify(data)
+
         });
 
-        submitBtn.innerHTML = "✅ تم الحجز بنجاح";
-        submitBtn.style.background = "#28a745";
+        popup.style.display="flex";
 
-        popup.style.display = "flex";
+        submitBtn.innerHTML="✅ تم الحجز بنجاح";
+        submitBtn.style.background="#28a745";
 
         const message =
 `السلام عليكم
@@ -82,19 +96,23 @@ form.addEventListener("submit", async function (e) {
 لقد أتممت الحجز من خلال الموقع.`;
 
         let counter = 3;
-        const countdown = document.getElementById("countdown");
+
+        const countdown =
+        document.getElementById("countdown");
+
         countdown.innerHTML = counter;
 
-        const timer = setInterval(() => {
+        const timer = setInterval(()=>{
 
             counter--;
+
             countdown.innerHTML = counter;
 
-            if (counter <= 0) {
+            if(counter<=0){
 
                 clearInterval(timer);
 
-                popup.style.display = "none";
+                popup.style.display="none";
 
                 window.open(
                     `https://wa.me/201148131965?text=${encodeURIComponent(message)}`,
@@ -103,49 +121,56 @@ form.addEventListener("submit", async function (e) {
 
                 form.reset();
 
-                gradeSelect.innerHTML = '<option value="">اختر الصف</option>';
+                gradeSelect.innerHTML =
+                '<option value="">اختر الصف</option>';
 
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = "🚀 تأكيد الحجز";
-                submitBtn.style.background = "#0b3d91";
+                submitBtn.disabled=false;
+                submitBtn.innerHTML="🚀 تأكيد الحجز";
+                submitBtn.style.background="";
 
             }
 
-        }, 1000);
+        },1000);
 
-    } catch (error) {
+    }catch(error){
 
-        alert("حدث خطأ أثناء إرسال الحجز، حاول مرة أخرى.");
+        alert("حدث خطأ أثناء إرسال الحجز.");
 
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "🚀 تأكيد الحجز";
-        submitBtn.style.background = "#0b3d91";
+        submitBtn.disabled=false;
+        submitBtn.innerHTML="🚀 تأكيد الحجز";
+        submitBtn.style.background="";
 
         console.error(error);
 
     }
 
 });
-/* الشريط المتحرك */
+//=========================
+// الشريط المتحرك
+//=========================
 
 const marquee = document.querySelector(".marquee");
 
-let position = window.innerWidth;
+if(marquee){
 
-function moveBanner(){
+    let position = window.innerWidth;
 
-    position -= 2; // السرعة
+    function moveBanner(){
 
-    marquee.style.right = position + "px";
+        position -= 1.5;
 
-    if(position < -marquee.offsetWidth){
+        marquee.style.right = position + "px";
 
-        position = window.innerWidth;
+        if(position < -marquee.offsetWidth){
+
+            position = window.innerWidth;
+
+        }
+
+        requestAnimationFrame(moveBanner);
 
     }
 
-    requestAnimationFrame(moveBanner);
+    moveBanner();
 
 }
-
-moveBanner();
