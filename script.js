@@ -174,3 +174,18 @@ if(marquee){
     moveBanner();
 
 }
+//=========================
+// Image Viewer
+//=========================
+
+const imageViewer = document.getElementById("imageViewer");
+const viewerImage = document.getElementById("viewerImage");
+
+function openImage(src){
+    viewerImage.src = src;
+    imageViewer.style.display = "flex";
+}
+
+function closeImage(){
+    imageViewer.style.display = "none";
+}
