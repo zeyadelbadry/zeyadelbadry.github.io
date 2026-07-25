@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Mr/ Zeyad El-badry | حجز الكورسات
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- الشريط المتحرك -->
+  <div class="top-banner">
+   <div class="marquee">
+    📢 بدأ الحجز للعام الدراسي 2026 / 2027 — الأماكن محدودة — احجز الآن
+   </div>
+  </div>
+  <!-- Hero -->
+  <section class="hero">
+   <div class="hero-content">
+    <img alt="Mr/ Zeyad El-badry" class="profile-img" src="profile.jpeg"/>
+    <h1>
+     Mr/ Zeyad El-badry
+    </h1>
+    <p class="subtitle">
+     مدرس اللغة الإنجليزية
+للمرحلتين الابتدائية والإعدادية
+    </p>
+    <p>
+     شرح مبسط • متابعة مستمرة • اختبارات دورية
+    </p>
+    <a class="btn" href="#booking">
+     احجز مكانك الآن
+    </a>
+   </div>
+  </section>
+  <div class="hero-wave">
+   <svg preserveaspectratio="none" viewbox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,160L80,170.7C160,181,320,203,480,192C640,181,800,139,960,133.3C1120,128,1280,160,1360,176L1440,192L1440,320L0,320Z" fill="#f4f7fc">
+    </path>
+   </svg>
+  </div>
+  <!-- Features -->
+  <section class="features">
+   <div class="card">
+    📘 شرح مبسط
+   </div>
+   <div class="card">
+    👨‍👩‍👧 متابعة مع ولي الأمر
+   </div>
+   <div class="card">
+    📝 امتحانات دورية
+   </div>
+   <div class="card">
+    🎯 مراجعات نهائية
+   </div>
+  </section>
+  <!-- Booking -->
+  <section class="booking-container" id="booking">
+   <h2>
+    نموذج الحجز
+   </h2>
+   <form id="bookingForm">
+    <input name="name" placeholder="اسم الطالب" required="" type="text"/>
+    <input inputmode="numeric" maxlength="11" name="phone" pattern="01[0125][0-9]{8}" placeholder="رقم ولي الأمر (واتساب)" required="" title="من فضلك أدخل رقم واتساب مصري صحيح" type="tel"/>
+    <select id="stage" name="stage" required="">
+     <option value="">
+      اختر المرحلة
+     </option>
+     <option value="ابتدائي">
+      ابتدائي
+     </option>
+     <option value="إعدادي">
+      إعدادي
+     </option>
+    </select>
+    <select id="grade" name="grade" required="">
+     <option value="">
+      اختر الصف
+     </option>
+    </select>
+    <input name="address" placeholder="العنوان" type="text"/>
+    <textarea name="notes" placeholder="ملاحظات (اختياري)"></textarea>
+    <button type="submit">
+     🚀 تأكيد الحجز
+    </button>
+   </form>
+  </section>
+  <!-- Student Honors -->
+  <section class="gallery-section">
+   <h2>
+    🏆جانب من تكريم طلابنا المتميزين
+   </h2>
+   <p class="gallery-text">
+    نفخر دائمًا بتكريم طلابنا المتفوقين وتحفيزهم على مواصلة النجاح.
+   </p>
+   <div class="gallery">
+    <img onclick="openImage(this.src)" src="images/honor1.jpg"/>
+    <img onclick="openImage(this.src)" src="images/honor2.jpg"/>
+    <img onclick="openImage(this.src)" src="images/honor3.jpg"/>
+    <img onclick="openImage(this.src)" src="images/honor4.jpg"/>
+    <img onclick="openImage(this.src)" src="images/honor5.jpg"/>
+    <img onclick="openImage(this.src)" src="images/honor6.jpg"/>
+   </div>
+   <!-- نافذة عرض الصورة -->
+   <div class="image-viewer" id="imageViewer" onclick="closeImage()">
+    <img id="viewerImage"/>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+   <p>
+    © 2026 / 2027 جميع الحقوق محفوظة 
+  Mr. Zeyad El-Badry
+   </p>
+  </footer>
+  <!-- Success Popup -->
+  <div class="popup" id="successPopup">
+   <div class="popup-content">
+    <div class="checkmark">
+     ✓
+    </div>
+    <h2>
+     تم الحجز بنجاح 🎉
+    </h2>
+    <p>
+     سيتم تحويلك إلى واتساب خلال
+    </p>
+    <h1 id="countdown">
+     3
+    </h1>
+   </div>
+  </div>
+  <a aria-label="WhatsApp" class="whatsapp-float" href="https://wa.me/201148131965" target="_blank">
+   <svg height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.02 3C8.84 3 3 8.84 3 16c0 2.52.74 4.98 2.13 7.08L3.75 29l6.1-1.34A12.9 12.9 0 0016.02 29C23.18 29 29 23.16 29 16S23.18 3 16.02 3zm6.37 17.38c-.27.76-1.58 1.45-2.18 1.54-.57.08-1.29.12-2.08-.14-.48-.15-1.1-.36-1.9-.7-3.34-1.44-5.52-4.8-5.69-5.03-.17-.23-1.36-1.81-1.36-3.45s.86-2.45 1.16-2.79c.31-.34.67-.43.89-.43h.64c.2 0 .48-.08.75.57.28.66.94 2.29 1.02 2.46.08.17.13.37.03.59-.1.23-.15.37-.31.57-.15.19-.33.42-.47.56-.15.16-.31.32-.13.63.18.31.81 1.33 1.73 2.16 1.19 1.05 2.19 1.38 2.5 1.54.31.15.48.13.66-.08.18-.21.74-.87.95-1.17.2-.31.4-.26.68-.16.28.1 1.76.83 2.06.98.31.15.5.23.57.36.07.13.07.78-.2 1.56z" fill="#fff">
+    </path>
+   </svg>
+  </a>
+  <script src="script.js">
+  </script>
+ </body>
+</html>
