@@ -201,19 +201,22 @@ placeholder="ملاحظات (اختياري)"></textarea>
         نفخر دائمًا بتكريم طلابنا المتفوقين وتحفيزهم على مواصلة النجاح.
     </p>
 
-  <div class="gallery">
+<div class="gallery">
 
-    <img src="images/honor1.jpg" alt="تكريم 1">
+    <img src="images/honor1.jpg" onclick="openImage(this.src)">
+    <img src="images/honor2.jpg" onclick="openImage(this.src)">
+    <img src="images/honor3.jpg" onclick="openImage(this.src)">
+    <img src="images/honor4.jpg" onclick="openImage(this.src)">
+    <img src="images/honor5.jpg" onclick="openImage(this.src)">
+    <img src="images/honor6.jpg" onclick="openImage(this.src)">
 
-    <img src="images/honor2.jpg" alt="تكريم 2">
+</div>
 
-    <img src="images/honor3.jpg" alt="تكريم 3">
+<!-- نافذة عرض الصورة -->
 
-    <img src="images/honor4.jpg" alt="تكريم 4">
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
 
-    <img src="images/honor5.jpg" alt="تكريم 5">
-
-    <img src="images/honor6.jpg" alt="تكريم 6">
+    <img id="viewerImage">
 
 </div>
 
