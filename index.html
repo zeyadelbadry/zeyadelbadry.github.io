@@ -105,9 +105,20 @@
     <img onclick="openImage(this.src)" src="images/honor6.jpg"/>
    </div>
    <!-- نافذة عرض الصورة -->
-   <div class="image-viewer" id="imageViewer" onclick="closeImage()">
-    <img id="viewerImage"/>
-   </div>
+ <div id="imageViewer" class="image-viewer">
+    <span class="close-btn" onclick="closeImage()">&times;</span>
+    <button class="nav-btn prev" onclick="prevImage(event)">
+        &#10094;
+    </button>
+    <img id="viewerImage">
+    <button class="nav-btn next" onclick="nextImage(event)">
+        &#10095;
+    </button>
+    <div class="counter" id="imageCounter">
+        1 / 6
+    </div>
+
+</div>
   </section>
   <!-- Footer -->
   <footer>
