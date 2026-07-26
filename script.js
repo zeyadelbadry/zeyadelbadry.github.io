@@ -184,7 +184,7 @@ let currentIndex = 0;
 
 function updateViewer(){
     viewerImage.src = images[currentIndex].src;
-  counter.innerHTML = ${currentIndex + 1} / ${images.length};
+ Counter.innerHTML = `${currentIndex + 1} / ${images.length}`;
 }
 
 function openImage(src){
