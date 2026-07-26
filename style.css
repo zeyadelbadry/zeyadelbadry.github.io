@@ -857,7 +857,9 @@ transform:scale(1.15);
 }
 
 .nav-btn{
-
+display:flex;
+justify-content:center;
+align-items:center;
 position:absolute;
 
 top:50%;
