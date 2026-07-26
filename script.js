@@ -183,23 +183,9 @@ const counter = document.getElementById("imageCounter");
 let currentIndex = 0;
 
 function updateViewer(){
-
-    viewerImage.style.opacity = "0";
-    viewerImage.style.transform = "scale(.96)";
-
-    setTimeout(()=>{
-
-        viewerImage.src = images[currentIndex].src;
-
-        counter.innerHTML = ${currentIndex + 1} / ${images.length};
-
-        viewerImage.style.opacity = "1";
-        viewerImage.style.transform = "scale(1)";
-
-    },150);
-
+    viewerImage.src = images[currentIndex].src;
+    counter.innerHTML = ${currentIndex + 1} / ${images.length};
 }
-
 function openImage(src){
 
     currentIndex =
