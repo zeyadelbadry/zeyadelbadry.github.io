@@ -174,18 +174,83 @@ if(marquee){
     moveBanner();
 
 }
-//=========================
-// Image Viewer
-//=========================
+const images = document.querySelectorAll(".gallery img");
 
 const imageViewer = document.getElementById("imageViewer");
 const viewerImage = document.getElementById("viewerImage");
+const counter = document.getElementById("imageCounter");
+
+let currentIndex = 0;
+
+function updateViewer(){
+
+    viewerImage.src = images[currentIndex].src;
+
+    counter.innerHTML =
+    ${currentIndex+1} / ${images.length};
+
+}
 
 function openImage(src){
-    viewerImage.src = src;
-    imageViewer.style.display = "flex";
+
+    currentIndex =
+    [...images].findIndex(img=>img.src===src);
+
+    updateViewer();
+
+    imageViewer.style.display="flex";
+
 }
 
 function closeImage(){
-    imageViewer.style.display = "none";
+
+    imageViewer.style.display="none";
+
 }
+
+function nextImage(e){
+
+    e.stopPropagation();
+
+    currentIndex++;
+
+    if(currentIndex>=images.length){
+
+        currentIndex=0;
+
+    }
+
+    updateViewer();
+
+}
+
+function prevImage(e){
+
+    e.stopPropagation();
+
+    currentIndex--;
+
+    if(currentIndex<0){
+
+        currentIndex=images.length-1;
+
+    }
+
+    updateViewer();
+
+}
+
+imageViewer.addEventListener("click",function(e){
+
+    if(e.target===imageViewer){
+
+        closeImage();
+
+    }
+});
+document.addEventListener("keydown",function(e){
+    if(imageViewer.style.display!=="flex") return;
+    if(e.key==="ArrowRight") nextImage(e);
+    if(e.key==="ArrowLeft") prevImage(e);
+    if(e.key==="Escape") closeImage();
+});
