@@ -183,12 +183,8 @@ const counter = document.getElementById("imageCounter");
 let currentIndex = 0;
 
 function updateViewer(){
-
     viewerImage.src = images[currentIndex].src;
-
-    counter.innerHTML =
-    ${currentIndex+1} / ${images.length};
-
+  counter.innerHTML = ${currentIndex + 1} / ${images.length};
 }
 
 function openImage(src){
