@@ -799,25 +799,16 @@ max-width:88%;
 max-height:85%;
 
 border-radius:18px;
-
 box-shadow:0 25px 60px rgba(0,0,0,.45);
-
 animation:zoomImage .25s;
-
-transition:.3s;
-
+opacity:1;
+transition:opacity .25s ease, transform .25s ease;
 }
-
 @keyframes zoomImage{
-
 from{
-
 transform:scale(.9);
-
 opacity:0;
-
 }
-
 to{
 
 transform:scale(1);
