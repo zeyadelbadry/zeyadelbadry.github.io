@@ -889,13 +889,11 @@ transition:.3s;
 }
 
 .nav-btn:hover{
-
 background:white;
-
 color:#0b3d91;
-
+transform:translateY(-50%) scale(1.08);
+box-shadow:0 0 25px rgba(255,255,255,.45);
 }
-
 .prev{
 
 left:20px;
